@@ -1,18 +1,24 @@
+import java.util.Set;
+import java.util.Collections;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Barrier {
   private final int numThreads;
-  private int waitingThreads;
+  private Set<Long> waitingThreadIds;
 
   public Barrier(int numThreads) {
     this.numThreads = numThreads;
-    this.waitingThreads = 0;
+    this.waitingThreadIds = Collections.newSetFromMap(
+      new ConcurrentHashMap<Long, Boolean>()
+    );
+
   }
 
   public void await() {
-    // TODO: can't just rely on the count, keep a list of threads waiting.
-    // Since the same thread may call await() more than once.
-    waitingThreads++;
-    while(waitingThreads < numThreads) {
-      Thread.currentThread().yield();
+    Thread t = Thread.currentThread();
+    waitingThreadIds.add(t.getId());
+    while(waitingThreadIds.size() < numThreads) {
+      t.yield();
     }
   }
 }
