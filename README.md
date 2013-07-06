@@ -1,14 +1,16 @@
 ## JavaBarrierExample
 
-### Steps
-1. Write your code that you wish you had: f9372d7
+### Steps taken
+Basically, the  commits in this repo:
+
+1. Write your code that you wish you had: [f9372d7](https://github.com/arnab/JavaBarrierExample/commit/f9372d7)
   * inspired by T/BDD, which I am very much used to.
-1. Use Java's CyclicBarrier to make it happen: 9a82c3f
+1. Use Java's CyclicBarrier to make it happen: [9a82c3f](https://github.com/arnab/JavaBarrierExample/commit/9a82c3f)
   * So we can learn the interface
-1. Replace CyclicBarrier with a stub implementation
+1. Replace CyclicBarrier with a stub implementation: [15971e2](https://github.com/arnab/JavaBarrierExample/commit/15971e2)
   * also simplify the API's cruft - we don't need those exceptions to be caught
   for the purpose of this demo
-1. Implement the barrier: 0a7370c & 9b26727
+1. Implement the barrier: [0a7370c](https://github.com/arnab/JavaBarrierExample/commit/0a7370c) & [9b26727](https://github.com/arnab/JavaBarrierExample/commit/9b26727)
 
 ### Running
 1. `git clone <this repo> && cd <repo>`
